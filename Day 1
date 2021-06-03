@@ -1,0 +1,17 @@
+-- 1. https://platform.stratascratch.com/coding-question?id=10309&python=
+
+SELECT count(DISTINCT(MC2.user_id)) from marketing_campaign MC1
+JOIN marketing_campaign MC2 ON MC1.user_id = MC2.user_id
+WHERE MC1.created_at < MC2.created_at
+AND
+MC1.product_id <> MC2.product_id
+
+
+--2.  https://platform.stratascratch.com/coding-question?id=10046&python=
+
+SELECT state , count(name) AS "n_businesses" 
+FROM yelp_business WHERE stars = 5
+GROUP BY state 
+ORDER BY state ASC
+LIMIT 5
+
